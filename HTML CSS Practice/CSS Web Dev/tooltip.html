@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *,*::before,*::after{
+        box-sizing: border-box;
+    }
+
+    body{
+        margin-top: 100px;
+    }
+
+    [data-tooltip]{
+        position: relative;
+    }
+
+    [data-tooltip]::before,
+    [data-tooltip]::after{ 
+        --tooltip-color:#333;
+        --arrow-size: .5em;
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%,var(--translate-y));
+    }
+
+    [data-tooltip]:hover:before{
+        --translate-y:calc(-100% - var(--arrow-size));
+        content: attr(data-tooltip);
+        max-width: max-content;
+        width: 100%; 
+        color: white;
+        background-color:var(--tooltip-color);
+        padding: .5em;
+        border-radius: .3em;
+        text-align: center;
+    }
+
+    [data-tooltip]:hover::after{
+        --translate-y:calc(-1 * var(--arrow-size));
+        content: '';
+        border: var(--arrow-size) solid transparent;
+        border-top-color: var(--tooltip-color);
+
+    }
+
+
+</style>
+<body>
+    <span data-tooltip="This is tooltip">Hover me for more info</span>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        :root{
+            --color:green; /* custom properties are defined in root or parents */
+            --margin:1em;
+        }
+        h1{
+            color: var(--color);
+            color: var(--color,blue);   /* if for some reason custome property don;t work, we can give default value as well */
+        }
+        p{
+            background-color: var(--color);
+            margin: var(--margin,10px);
+        }
+    </style>
+</head>
+<body>
+    <h1>Heading</h1>
+    <p>Paragraph 1</p>
+    <p>Paragraph 2</p>
+    <button>Click me</button>
+
+    <script>
+        let btn=document.querySelector('button').addEventListener("click",()=>{
+           /*  console.log(getComputedStyle(document.documentElement).getPropertyValue("--color")) */  /* read the property */
+
+        document.documentElement.style.setProperty("--color","red")
+        })
+        /* useful for switching light/dark theme because on variable changes all */
+    </script>
+</body>
+</html>

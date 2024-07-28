@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+<form action="/action">
+Enter your profession
+<select name="Profession" id="profession">
+<!--use selected tag if you want an option to be selected by dafault-->
+    <option>Choose your option</option>
+    <option value="Student">Student</option>
+    <option value="Professor">Professor</option>
+    <option value="Dev">Developer</option>
+    <option value="Nothing" selected>Nil</option>
+</select>
+<label for="vol">Select volume range</label>
+<!--if we use "step" it will step up by 10 multiple-->
+<!--value for default set, so in this case value will be 50 by default-->
+<input type="range" id="vol" min="0" max="100" name="volume" step="10" value="50">
+
+<label for="feedback">Enter your feedback</label>
+<textarea name="feedback" id="feedback" cols="30" rows="10"></textarea>
+
+<button>Submit</button>
+</form>
+</body>
+</html>

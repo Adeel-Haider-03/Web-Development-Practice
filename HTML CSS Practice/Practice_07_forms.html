@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <form action="/action">
+
+        <!--Name attribute: we give a name attr to inpuut type to send daat to backend-->
+        <div>
+            <label for="username">Enter your username</label>
+            <input type="text" id="username" placeholder="Enter username" name="username">
+        </div>
+    </form>
+    <hr>
+
+    <!--copy link before ? qustion mark-->
+    <form action="https://www.youtube.com/results">    <!--action will send data to this URL, which is youtube search-->
+
+        <input type="text" placeholder="search youtube" name="search_query">  <!--in name section, we need to put         the word after ? and till equal sign-->
+        <button>Search youtube</button>
+    </form>
+
+<form action="https://www.google.com/search">
+        <input type="text" placeholder="search google" name="q">
+        <button>search</button>
+</form>
+<hr>
+<!--Reddit search-->
+    <form action="https://www.reddit.com/search/">
+        <input type="text" placeholder="search google" name="q">
+        <button>search on reddit</button>
+</form>
+
+</body>
+</html>

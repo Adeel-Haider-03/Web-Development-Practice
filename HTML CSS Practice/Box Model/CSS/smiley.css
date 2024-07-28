@@ -1,0 +1,38 @@
+.smiley{
+    height: 400px;
+    width: 400px;
+    border-radius: 50%;
+    background-color: rgb(255, 225, 0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.lefteye{
+    width: 100px;
+    height: 100px;
+    background-color: black;
+    border-radius: 50%;
+    position: absolute;
+    top:100px;
+    left:75px
+}
+.righteye{
+    width: 100px;
+    height: 100px;
+    background-color: black;
+    border-radius: 50%;
+    position: absolute;
+    top:100px;
+    left:250px;
+}
+.mouth{
+    width: 200px;
+    height: 100px;
+    background-color: black;
+    position: absolute;
+    top: 250px;
+    left: 110px;
+   
+    border-radius: 50%;
+  border-top: 3px solid black;
+}

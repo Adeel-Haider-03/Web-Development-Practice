@@ -1,0 +1,101 @@
+*{
+    font-family: 'Courier New', Courier, monospace;
+}
+
+h1,h3{
+    color: #b92b27;
+}
+#login{
+    background-color: white;
+}
+#signup{
+    background-color: #b92b27;
+    color: white;
+}
+
+.upvote{
+    background-color: green;
+    color: aliceblue;
+}
+
+/* descendant selector */
+.para a{
+    color: purple;
+}
+
+/* bullet color changed */
+nav ul li{
+    color: hotpink;
+}
+nav ul li a{
+    color:purple;
+}
+/* sibling combinator--mtlb ik k baad jo immediate dosra ata ho os par apply hoga
+e.g yaha par upvote k immediate baad jo answer ata HO OS PAR APPLY KARENGE CSS
+*/
+.upvote + button{
+    background-color: antiquewhite;
+}
+
+p+h3{
+    text-decoration: underline;
+}
+
+/*child combinator--the one which is direct child of other
+div k immediate baad jo input childrens honge*/
+div>input{
+background-color: cadetblue;
+}
+
+/*attribute selector*/
+input[type="text"]{
+    color: red;
+    /*when we will type text it will be red*/
+}
+
+input[type]{
+    /*for all type value*/
+    background-color: ghostwhite;
+}
+
+button:hover{
+    background-color: #b92b27;
+    color: white;
+}
+/*when we click on button*/
+button:active{
+    color: black;
+    background-color: hotpink;
+}
+
+h3:active{
+    text-decoration: none;
+    /*when click on h3, underline will gone*/
+}
+
+/*when checked then change css*/
+input[type="radio"]:checked+ label{
+/*we want to change label, since label come after input so we used descendant property here*/
+color: red;
+font-weight: bold;
+}
+
+/*.para:nth-of-type(2){            it will change 2nd para css
+    background-color: aquamarine;
+}*/
+
+.para:nth-of-type(2n){            /*it will change css of every 2ndth para, 2nd,4th,6th......*/
+    background-color: aquamarine;   /* if 3n then 3rd,6th,9th.........*/
+}
+
+h1::first-letter{
+    color: black;
+}
+
+.para::first-line{
+    color: rgb(236, 15, 15);
+}
+
+.para::selection{
+    background-color: #b92b27;
+}

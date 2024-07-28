@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--Proper Sample-->
+    <form action="/action">
+        <div>
+            <label for="username">Enter Username</label>
+            <input type="text" id="username" placeholder="username">
+        </div>
+        
+        <div>
+            <label for="password">Enter password</label>
+            <input type="password" id="password" placeholder="enter password">
+        </div>
+        
+        <div>
+            <label for="age">Enter your age</label>
+            <input type="number" id="age" placeholder="enter age">
+        </div>
+        
+        <button>Submit</button> <!--whatever we write the function of buttton is to submit our data to /action-->
+                                <!--if we write /server it will redirect to server-->
+                                <!--the position of button also doesn't matter, it func remain same whether on top or     bottom or anywhere-->
+                                <!--but but but if we create this button outside form, then nothing happen-->
+
+        <!--below not a good way to create button, always use <button>-->
+        <input type="button" value="click me"> <!--button with help of input type,no function-->
+        <input type="submit" value="click me 2"> <!--button with help of input type,submit function-->
+
+
+
+
+            </form>
+
+
+</body>
+</html>

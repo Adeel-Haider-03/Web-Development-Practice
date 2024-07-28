@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid</title>
+    <style>
+        .grid{
+            height: 100vh;
+            border: 2px solid red;
+            display: grid;
+            grid-template-columns: repeat(5,1fr);
+            grid-auto-rows: 150px;
+            grid-gap: 10px;
+            background-color: yellow;
+            /* justify-items: center; */
+            /* align-items: center; */
+            place-items: center; /* each box placed in center of cell */
+        }
+        .grid div{
+            background-color: antiquewhite;
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+            text-align: center;
+        }
+
+        .one{
+            /* align-self: center;
+            justify-self: center; */
+            
+           
+           /*  grid-column-start: 1;
+            grid-column-end: 4; */
+            /* grid-column: 1/3; */ /* TAKE 2 column space, i.e line 1 to 3 */
+            /* grid-column: 2/span 2; */ /* span 2 means need 2 boxes space starting from box 2 including 2 */
+        }
+        .two{
+            /*grid-column: 1/span 2;
+              satrting  from 1 occupy 2 boxes space for row  but it will result starting from new linw since can't go reverse*/
+              grid-row: 1/span 4;
+              /* staring from row 1, occupy space of 4 boxes */
+        }
+    </style>
+</head>
+<body>
+    <div class="grid">
+        <div class="one">1</div>
+        <div class="two">2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+        <div>9</div>
+        <div>10</div>
+    </div>
+</body>
+</html>
