@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    button{
+        padding: 20px;
+    }
+</style>
+<body>
+    
+    <input type="text" name="todo" id="inp" placeholder="write your task">
+
+    <button type="submit" id="btn">ADD your task</button>
+
+    <ul id="task">
+
+    </ul>
+
+<script>
+
+let inp=document.querySelector("#inp")
+let task=document.querySelector("#task")
+
+    let btn=document.querySelector("#btn")
+
+    btn.addEventListener('click',function(event){
+    addTask();
+    })
+    
+    function addTask(){
+        let taskitem=document.createElement('li')
+        let button=document.createElement('button')
+        button.innerText="Delete"
+
+        taskitem.textContent=inp.value;
+        task.appendChild(taskitem)     //adding task to li
+        taskitem.appendChild(button)  //adding button inside li
+
+        //remove task
+
+        /*  inp.value = "";
+        button.addEventListener('click',function(){
+        taskitem.remove();
+    }
+    ) */
+    }
+        //another method to remove using event delegation
+    task.addEventListener('click',function(){
+        if(event.target.nodeName=='BUTTON'){ //if it is button
+            let deletetask=event.target.parentElement;   //refer to li
+           // console.log(deletetask)   
+            deletetask.remove();
+            
+        }
+    }
+    )
+
+    
+    
+</script>
+</body>
+</html>

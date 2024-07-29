@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<style>
+    .red{
+        color: red;
+    }
+</style>
+<body>
+    
+    <div class="container">
+
+    </div>
+
+
+    <script>
+        let container=document.querySelector(".container")
+        let para=document.createElement('p')
+
+        para.innerHTML=`Hey I am Red`;
+      //  para.style.color="red"
+        container.appendChild(para);
+        para.classList.add('red')
+        
+        let heading3=document.createElement('h3')
+        heading3.innerHTML="I am Blue h3"
+        heading3.style.color="Blue"
+        container.appendChild(heading3)
+
+        let div=document.createElement('div')
+        div.style.border="2px solid Black"
+        div.style.backgroundColor="Pink"
+        div.setAttribute('id','div')
+
+        container.prepend(div)    //prepend so will add before all
+
+        let divop=document.querySelector('#div')
+
+        let h1=document.createElement('h1')
+        h1.innerHTML=`I am in a Div`
+        divop.appendChild(h1)
+
+        let para2=document.createElement('p')
+        para2.innerHTML="Hey i am para 2 inside div"
+
+        divop.appendChild(para2)
+
+    </script>
+</body>
+</html>

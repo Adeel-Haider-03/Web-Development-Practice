@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .butn{
+        background-color: blue;
+        color: white;
+    }
+</style>
+<body>
+
+    <script>
+        let body=document.querySelector('body')
+        let ph=document.createElement('input')
+        let btn=document.createElement('button')
+
+        btn.innerText="Click Me!!"
+
+        body.appendChild(ph)
+        body.appendChild(btn)
+
+        ph.setAttribute('type','text')
+        ph.setAttribute('placeholder','username')
+        
+        btn.setAttribute('id','btn')
+
+        let button=document.querySelector('#btn')
+        button.classList.add('butn')
+
+        let h1=document.createElement('h1')
+        h1.innerText="DOM Practice"
+        h1.style.color="purple"
+        body.prepend(h1)
+
+        let para=document.createElement('p')
+        para.innerHTML="Apna College DOM <b>Practice</b>"
+
+        body.appendChild(para)
+        
+
+    </script>
+</body>
+</html>

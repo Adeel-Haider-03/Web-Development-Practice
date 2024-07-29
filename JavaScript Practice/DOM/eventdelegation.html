@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #outer{
+        background-color: pink;
+        height: 400px;
+        width: 50%;
+    }
+    #middle{
+        background-color: orange;
+        height: 400px;
+        width: 50%;
+    }
+    #inner{
+        background-color: brown;
+        height: 400px;
+        width: 50%;
+    }
+</style>
+<body>
+    <!--whenever an event is triggered for nested item, it trigger event in parent also-->
+
+    <div id="outer">
+        <p>outer div</p>
+        <div id="middle">
+            <p>middle div</p>
+            <div id="inner">
+                <p>inner div</p>
+            </div>
+        </div>
+
+    </div>
+
+
+<script>
+    let outer=document.querySelector("#outer")
+    let middle=document.querySelector("#middle")
+    let inner=document.querySelector("#inner")
+
+    outer.addEventListener('click',function(event){
+        console.log("outer div was clicked")
+    })
+
+    middle.addEventListener('click',function(event){
+        console.log("middle div was clicked")
+        //event.stopPropagation();     
+    })
+
+    inner.addEventListener('click',function(event){
+        console.log("inner div was clicked")
+        //event.stopPropagation();                       //to stop delegation so parents event are not triggered
+    })
+
+    
+</script>
+</body>
+</html>

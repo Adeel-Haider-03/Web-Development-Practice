@@ -1,0 +1,1 @@
+let nameInterval=setInterval(name, 2000,"Adeel");

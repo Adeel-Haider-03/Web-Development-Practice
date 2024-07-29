@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Color Changer</h1>
+    <button id="start">START</button>
+    <button id="stop">STOP</button>
+
+
+    <script>
+        let start=document.querySelector("#start")
+        let stops=document.querySelector("#stop")
+
+        function changeColor() {
+            let hexColor="0123456789ABCDEF";
+            let str="#"
+            for (let index = 0; index < 6; index++) {
+            str+=hexColor[Math.floor(Math.random()*16)]
+        }
+        return str;
+        }
+        let intervalId;
+
+        const startChangingColor=function(){
+            if(!intervalId){
+                intervalId=setInterval(color, 1000);
+            }
+            
+        }
+
+        let color=function(){
+        document.body.style.backgroundColor=changeColor();   
+    }
+
+        const stopChangingColor=function(){ 
+            clearInterval(intervalId);
+            intervalId=null;
+    }
+
+        start.addEventListener("click",startChangingColor);
+
+        stops.addEventListener("click",stopChangingColor);
+        
+    </script>
+</body>
+</html>

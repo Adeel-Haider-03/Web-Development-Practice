@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <input type="text" placeholder="press anything">
+
+    <p id="key">Key Pressed = </p>
+    <p id="keycode">Key Code = </p>
+
+    <script>
+        let inp=document.querySelector('input')
+
+        inp.addEventListener("keydown",function(event){
+            let p1=document.querySelector("#key")
+            let p2=document.querySelector("#keycode")
+
+            p1.append(event.key)
+            p1.append(" ")
+            console.log("")
+            p2.append(event.code)
+            p2.append(" ")
+        })
+
+    </script>
+</body>
+</html>

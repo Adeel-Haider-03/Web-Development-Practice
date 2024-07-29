@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>This is how this work in event listener</h1>
+    <p>this refer to the the node/element in which it is called </p>
+
+    <button>CLick me</button>
+<script>
+    let para=document.querySelector('p')
+    let heading=document.querySelector('h1')
+    let btn=document.querySelector('button')
+
+    function changeColor(){
+        console.log(this.innerText)
+        this.style.backgroundColor="blue"
+    }
+
+    para.addEventListener('click',changeColor)
+    heading.addEventListener('click',changeColor)
+    btn.addEventListener('click',changeColor)
+
+
+    /* 
+    
+    para.addEventListener('click',function(){        //here this refer to btn
+        console.log(this.innerText)               
+        this.style.backgroundColor="Blue"
+    })
+    
+    
+    
+    
+    
+    */
+
+
+</script>
+</body>
+</html>

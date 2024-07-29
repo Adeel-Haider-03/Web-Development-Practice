@@ -1,0 +1,36 @@
+<!--Qs3. Create an input element on the page with a placeholder ”enter your name” and an
+H2 heading on the page inside HTML.
+The purpose of this input element is to enter a user’s name so it should only input
+letters from a-z, A-Z and space (all other characters should not be detected).
+Whenever the user inputs their name, their input should be dynamically visible inside
+the heading.
+[Please note that no other character apart from the allowed characters should be
+visible in the heading]-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2 id="heading"></h2>
+    <input type="text" placeholder="enter your name" id="name">
+
+    <script>
+        let inp=document.querySelector("input")
+        let h2=document.querySelector("#heading")
+        let name='';
+
+        inp.addEventListener('keydown',function(event){
+            if(event.key<'a' && event.key>'A' || event.key==''){
+
+                console.log(event.key);
+                h2.textContent=name;
+            }})
+
+            
+    </script>
+</body>
+</html>

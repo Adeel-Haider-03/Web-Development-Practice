@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validator</title>
+</head>
+<style>
+input{
+    display: flex block;
+}
+
+p{
+    color: red;
+}
+</style>
+<body>
+    <!--we can either manually prompt that this field is missing or just used required to do job itself-->
+<form action="/action" id="signup">
+
+<label for="name">Name</label>
+<input type="text" id="name" name="name" >
+<p id="username"></p>
+
+<label for="email">Email</label>
+<input type="text" id="email" name="email" >
+<p id="usermail"></p>
+
+<label for="pass">password</label>
+<input type="password" id="pass" name="pass" >
+<p id="password"></p>
+
+<label for="conpass">Confirm password</label>
+<input type="password" id="confpass" name="conpass" >
+<p id="confirmpassowrd"></p>
+
+
+<button type="submit" id="btn">Submit</button>
+
+</form>
+
+<script>
+    let form=document.querySelector("#signup")
+    form.addEventListener("submit",function(event){
+        event.preventDefault();
+        validate();
+    });
+
+    function validate(){
+    let name=document.querySelector("#name")
+    let email=document.querySelector("#email")
+    let password=document.querySelector("#pass")
+    let confirmPassword=document.querySelector("#confpass")
+
+    //extracting values
+    name=name.value;
+    email=email.value;
+    password=password.value;
+    confirmPassword=confirmPassword.value;
+
+    let username=document.querySelector("#username")
+    let userEmail=document.querySelector("#usermail")
+    let userpass=document.querySelector("#password")
+    let userconpass=document.querySelector("#confirmpassowrd")
+
+    username.textContent=!name?'Please enter username':'';
+    userEmail.textContent=!email?'Please enter email':'';
+    userpass.textContent=!password?'Please enter password':'';
+    userconpass.textContent=password!==confirmPassword?'Password did not match':'';
+
+    if(name && email && password && confirmPassword && password===confirmPassword){
+        alert("signup Successful");
+        form.reset();
+    }
+}
+</script>
+
+</body>
+</html>

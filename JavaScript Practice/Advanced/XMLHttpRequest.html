@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+
+
+
+
+    <script>
+        const apiURL="https://api.github.com/users/hiteshchoudhary";
+
+        const XMLR=new XMLHttpRequest();
+
+        XMLR.open('GET',apiURL);
+
+    XMLR.onreadystatechange=function(){
+        // console.log(XMLR.readyState);
+        if(XMLR.readyState===4){                             //4 mean operation done
+            const data=JSON.parse(this.responseText);        //responseText Hold Data,  also API data is in string so we parse it into object
+            // console.log(data)
+            console.log(data.followers);
+        }
+    }
+
+    XMLR.send();
+    
+    </script>
+</body>
+</html>
