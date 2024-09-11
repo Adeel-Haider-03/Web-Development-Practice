@@ -1,3 +1,3 @@
 # Web-Development-Practice
 Web Development 
-This is my Practice while i wa learning web development 
+This is my Practice while i was learning web development 
